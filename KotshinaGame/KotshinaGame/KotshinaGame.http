@@ -1,0 +1,6 @@
+@KotshinaGame_HostAddress = http://localhost:5144
+
+GET {{KotshinaGame_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
