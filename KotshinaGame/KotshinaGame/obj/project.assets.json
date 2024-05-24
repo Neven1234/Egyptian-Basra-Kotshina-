@@ -434,11 +434,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KotshinaGame\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
+      "projectUniqueName": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
       "projectName": "KotshinaGame",
-      "projectPath": "D:\\KotshinaGame\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
+      "projectPath": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
       "packagesPath": "C:\\Users\\JC.TECH\\.nuget\\packages\\",
-      "outputPath": "D:\\KotshinaGame\\KotshinaGame\\KotshinaGame\\obj\\",
+      "outputPath": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

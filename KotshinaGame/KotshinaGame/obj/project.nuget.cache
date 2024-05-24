@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3qRNtCWaV0hiL77zJlMMJ0oI7crT5b0UAvQyWiDcra5rvwyFzNt1I9OxMPyV8ISLKVCJBai3iPhb1Joe4xV6oA==",
+  "dgSpecHash": "gnDa+oGM/BQhLurhSJZmH9hZQqwkbrfvJSoTBejKvkLT9zTGbyAJ/NgfpTyw3D6iQ/S9yPfisadhbW7VfZtYoQ==",
   "success": true,
-  "projectFilePath": "D:\\KotshinaGame\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
+  "projectFilePath": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\KotshinaGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JC.TECH\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\JC.TECH\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

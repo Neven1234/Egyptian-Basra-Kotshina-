@@ -10,7 +10,7 @@ namespace KotshinaGame.Controllers
     public class GameController : ControllerBase
     {
         private readonly IGameLogic _gameLogic;
-        private static GameState _gameState;
+        private readonly GameState _gameState;
 
        public  GameController(IGameLogic gameLogic,GameState gameState)
        {
@@ -26,7 +26,9 @@ namespace KotshinaGame.Controllers
             _gameState.Computer = new Player();
             _gameState.TableCards = new List<Card>();
             _gameState.IsPlayerTurn = true;
+            _gameState.LastOne = 0;
             _gameState.deck = deck;
+            
             _gameLogic.InitialCards(_gameState);
             return Ok(_gameState);
         }
@@ -39,7 +41,12 @@ namespace KotshinaGame.Controllers
             if (cardToPlay != null && _gameState.IsPlayerTurn)
             {
                 _gameState.Player.Hand.Remove(cardToPlay);
-                _gameState.Player.Score += await _gameLogic.EvaluateTable(card, _gameState);
+                var score= await _gameLogic.EvaluateTable(card, _gameState);
+                if (score != 0)
+                {
+                    _gameState.LastOne = 1;
+                }
+                _gameState.Player.Score += score;
                 _gameState.IsPlayerTurn = false;
                 CheckToReFeal(_gameState);
                 return Ok(_gameState.Player.Score);
@@ -59,8 +66,25 @@ namespace KotshinaGame.Controllers
             if (cardToPlay != null )
             {
                 _gameState.Computer.Hand.Remove(cardToPlay);
-                
-                _gameState.Computer.Score += await _gameLogic.EvaluateTable(cardToPlay, _gameState);
+                var score= await _gameLogic.EvaluateTable(cardToPlay, _gameState);
+                if (score != 0)
+                {
+                    _gameState.LastOne = 0;
+                }
+                if(_gameState.deck.Cards.Count()==0 && _gameState.Computer.Hand.Count() == 0)
+                {
+                    if (_gameState.LastOne == 0)
+                    {
+                        score += _gameState.TableCards.Count();  
+                    }
+                    else
+                    {
+                        _gameState.Player.Score+= _gameState.TableCards.Count();
+
+                    }
+                    _gameState.TableCards.Clear();
+                }
+                _gameState.Computer.Score += score;
                 _gameState.IsPlayerTurn = true;
                 CheckToReFeal(_gameState);
                 return Ok(_gameState.Computer.Score);
