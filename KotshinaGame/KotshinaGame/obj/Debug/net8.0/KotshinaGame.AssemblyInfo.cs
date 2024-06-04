@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KotshinaGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7445066ba1ab439d031d263c475c7c5bc233dd04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4917863f4da9727d0fef07367f10ac9476177024")]
 [assembly: System.Reflection.AssemblyProductAttribute("KotshinaGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KotshinaGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
