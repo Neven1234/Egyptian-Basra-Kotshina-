@@ -1,0 +1,16 @@
+<div class="Computer-hand">
+    <div class="ComputerCard" *ngFor="let card of ComputerCards; let i = index" [ngStyle]="getCardStyle(i)" (click)="onCardClick(card)">
+        <div class="card-back"></div>
+    </div>
+</div>
+
+<div class="Table-hand">
+    <div class="TableCard" *ngFor="let card of TableCards; let i = index" [ngStyle]="getCardStyle(i)" (click)="onCardClick(card)">
+      {{ card }}
+    </div>
+</div>
+<div class="player-hand">
+    <div class="playerCard" *ngFor="let card of Playercards; let i = index" [ngStyle]="getCardStyle(i)" (click)="onCardClick(card)">
+      {{ card }}
+    </div>
+</div>

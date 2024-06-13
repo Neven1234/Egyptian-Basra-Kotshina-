@@ -1,0 +1,5 @@
+defult 2: anmimatio :02_Idle_LittleFriends
+happy when win 5: 05_Jump_LittleFriends
+when lose 8: 08_Sleep01_LittleFriends
+when play 7: 07_Eat_LittleFriends
+when lose 9:09_Sleep02_LittleFriends
