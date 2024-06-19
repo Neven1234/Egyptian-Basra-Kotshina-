@@ -52,7 +52,11 @@ namespace KotshinaGame.Controllers
                 _gameState.Player.Score += score;
                 _gameState.IsPlayerTurn = false;
                 CheckToReFeal(_gameState);
-                return Ok(_gameState.Player.Score);
+                return Ok(new
+                {
+                    cardPlayed = cardToPlay,
+                    GameState = _gameState
+                });
             }
            return BadRequest();
 
@@ -90,8 +94,12 @@ namespace KotshinaGame.Controllers
                 _gameState.Computer.Score += score;
                 _gameState.IsPlayerTurn = true;
                 CheckToReFeal(_gameState);
-                await _gamePlayHub.UpdateGameState(_gameState);
-                return Ok(_gameState.Computer.Score);
+                //await _gamePlayHub.UpdateGameState(_gameState);
+                return Ok(new
+                {
+                    cardPlayed=cardToPlay,
+                    GameState = _gameState
+                });
             }
             return BadRequest();
                

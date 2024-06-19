@@ -6,3 +6,4 @@ canvas {
     height: 100%;
     z-index: 0; /* Ensure the canvas is behind the player hand */
   }
+  

@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Card } from './Models/cars';
+import { GameState } from './Models/gameState';
+import { BasraService } from './_services/basra.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent   {
+ 
   title = 'EgyptianBasraKotshinaUI';
-  playerCards = ['A♠', '2♠', '3♠', '4♠', '5♠'];
-  TableCards = ['B♠', '4♠', '3♠', '4♠', '5♠'];
-  ComputerCards = ['C♠', '4♠', '3♠', '4♠', '5♠'];
+ 
+
+  
 }

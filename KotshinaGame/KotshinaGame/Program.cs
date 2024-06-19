@@ -20,6 +20,18 @@ builder.Services.AddScoped<HubService>();
 //SignalR
 builder.Services.AddSignalR();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: "AllowOrigin",
+          builder => {
+              builder.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader();
+          });
+});
+
 var app = builder.Build();
 
 app.UseCors("AllowOrigin");

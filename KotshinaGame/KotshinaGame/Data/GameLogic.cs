@@ -14,22 +14,25 @@ namespace Kotshina.Data
                 return score;
             }
             // if card is a Jack
-            if (card.Value == "J")
+           else if (card.Value == "J")
             {
                 score = gameState.TableCards.Count();
                 gameState.TableCards.Clear();
                 score++;
                 return score;
             }
-            //If card is a 7 diamonds
-            else if (card.Value == "7" && card.Suits == "Diamonds")
+            //If card is a 7 ♦
+            else if (card.Value == "7" && card.Suits == "♦")
             {
                 int sum = 0;
                 foreach (var cardInTable in gameState.TableCards)
                 {
                     if ( cardInTable.Value == "K" || cardInTable.Value == "Q")
                     {
-                        break;
+                        score = gameState.TableCards.Count();
+                        gameState.TableCards.Clear();
+                        score++;
+                        return score;
                     }
                     sum += int.Parse(cardInTable.Value);
                 }
@@ -96,7 +99,7 @@ namespace Kotshina.Data
             //Check for sum in table cards equal to computer card
             foreach(var computercard in gameState.Computer.Hand)
             {
-                if(computercard.Value=="J" || computercard.Value=="7"&& computercard.Suits== "Diamonds")
+                if(computercard.Value=="J" && gameState.TableCards.Count>0  || computercard.Value=="7"&& computercard.Suits== "♦" && gameState.TableCards.Count > 0)
                 {
                     cardToPlay = computercard;
                     break;
@@ -158,7 +161,7 @@ namespace Kotshina.Data
         public async Task<Deck> InitializeDeck(Deck deck)
         {
                 List<string> Values = new List<string> {"1","2","3","4","5","6","7","8","9","10","J","Q","K"};
-                List<string> Suits = new List<string>{ "Hearts","Diamonds","Clubs","Spades" };
+                List<string> Suits = new List<string>{ "♥", "♦", "♣", "♠" };
                 foreach (var suit in Suits)
                 {
                     foreach (var value in Values)
@@ -190,7 +193,7 @@ namespace Kotshina.Data
 
             foreach (var card in TableCards)
             {
-                if(card.Value=="7" && card.Suits== "Diamonds" || card.Value == "J")
+                if(card.Value=="7" && card.Suits== "♦" || card.Value == "J")
                 {
                     deck.Cards.Add(card);
                     TableCards.Remove(card);
@@ -218,7 +221,7 @@ namespace Kotshina.Data
 
             for (int i = start; i < cards.Count; i++)
             {
-                if (cards[i].Value== "K" || cards[i].Value== "Q")
+                if (cards[i].Value== "K" || cards[i].Value== "Q" || cards[i].Value== "J")
                 {
                     continue;
                 }

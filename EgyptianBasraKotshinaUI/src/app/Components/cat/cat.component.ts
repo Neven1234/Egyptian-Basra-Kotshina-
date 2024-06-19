@@ -13,14 +13,14 @@ export class CatComponent implements OnInit {
   glif:GLTF
   private mixer!: THREE.AnimationMixer;
   private clock = new THREE.Clock();
-
+  private animations: { [key: string]: THREE.AnimationAction } = {};
   async ngOnInit(): Promise<void> {
     try {
       this.glif = await this.loadGLTFModel();
     } catch (error) {
       console.error('Error loading GLTF model:', error);
     }
-     
+
   }
 
   private async loadGLTFModel(): Promise<GLTF> {
@@ -41,16 +41,11 @@ export class CatComponent implements OnInit {
           // Initialize AnimationMixer
           this.mixer = new THREE.AnimationMixer(model);
   
-          const animationName = '02_Idle_LittleFriends';
-          const animationClip = gltf.animations.find(clip => clip.name === animationName);
-          
-          if (animationClip) {
-            const action = this.mixer.clipAction(animationClip);
-           
-            action.play();
-          } else {
-            console.warn(`Animation clip '${animationName}' not found.`);
-          }
+          // Load or assign animations
+          gltf.animations.forEach((clip) => {
+            const action = this.mixer.clipAction(clip);
+            this.animations[clip.name] = action;
+          });
   
           // Animation loop
           const animate = () => {
@@ -61,6 +56,7 @@ export class CatComponent implements OnInit {
   
             renderer.render(scene, camera);
           };
+          this.playAnimation('02_Idle_LittleFriends')
           resolve(gltf);
           animate();
         }, undefined, (error) => {
@@ -76,4 +72,11 @@ export class CatComponent implements OnInit {
       return this.glif
     })
   }
+  private playAnimation(name: string) {
+    if (this.animations[name]) {
+      this.animations[name].reset().play();
+    }
+  }
+
+ 
 }
