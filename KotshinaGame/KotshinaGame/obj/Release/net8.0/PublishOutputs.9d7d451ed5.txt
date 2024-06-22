@@ -1,0 +1,12 @@
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\KotshinaGame.exe
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\KotshinaGame.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\KotshinaGame.deps.json
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\KotshinaGame.runtimeconfig.json
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\KotshinaGame.pdb
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

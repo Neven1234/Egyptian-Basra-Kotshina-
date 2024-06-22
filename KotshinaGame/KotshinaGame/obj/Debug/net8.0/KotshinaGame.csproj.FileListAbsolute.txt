@@ -38,6 +38,7 @@ D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\KotshinaGame.dll
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\KotshinaGame.pdb
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -63,4 +64,3 @@ D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Debug\net8.0\
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Debug\net8.0\KotshinaGame.pdb
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Debug\net8.0\KotshinaGame.genruntimeconfig.cache
 D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\obj\Debug\net8.0\ref\KotshinaGame.dll
-D:\Kotshina\Egyptian-Basra-Kotshina-\KotshinaGame\KotshinaGame\bin\Debug\net8.0\Newtonsoft.Json.dll

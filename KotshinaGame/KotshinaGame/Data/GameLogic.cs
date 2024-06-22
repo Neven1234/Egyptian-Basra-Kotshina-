@@ -27,7 +27,7 @@ namespace Kotshina.Data
                 int sum = 0;
                 foreach (var cardInTable in gameState.TableCards)
                 {
-                    if ( cardInTable.Value == "K" || cardInTable.Value == "Q")
+                    if ( cardInTable.Value == "K" || cardInTable.Value == "Q" || cardInTable.Value == "J")
                     {
                         score = gameState.TableCards.Count();
                         gameState.TableCards.Clear();
@@ -43,7 +43,8 @@ namespace Kotshina.Data
                 }
                 else
                 {
-                   return 10;
+                    gameState.TableCards.Clear();
+                    return 10;
                     
                 }
                 score++;
@@ -95,16 +96,19 @@ namespace Kotshina.Data
         {
             Card cardToPlay = null;
             int maxSum = 0;
-
+            if(gameState.TableCards.Count()==0 && gameState.Computer.Hand.Count() == 1)
+            {
+                cardToPlay = gameState.Computer.Hand[0];
+            }
             //Check for sum in table cards equal to computer card
             foreach(var computercard in gameState.Computer.Hand)
             {
-                if(computercard.Value=="J" && gameState.TableCards.Count>0  || computercard.Value=="7"&& computercard.Suits== "♦" && gameState.TableCards.Count > 0)
+                if(computercard.Value=="J" && gameState.TableCards.Count()!=0  || computercard.Value=="7"&& computercard.Suits== "♦" && gameState.TableCards.Count() != 0)
                 {
                     cardToPlay = computercard;
                     break;
                 }
-                else if (computercard.Value == "K" || computercard.Value == "Q" )
+                else if (computercard.Value == "K" || computercard.Value == "Q" || computercard.Value == "J")
                 {
                     continue;
                 }
@@ -213,6 +217,7 @@ namespace Kotshina.Data
         }
         private void GetSubsetsThatSumToValueRecursive(List<Card> cards, int targetValue, List<Card> currentSubset, List<List<Card>> result, int start)
         {
+            
             if (targetValue == 0)
             {
                 result.Add(new List<Card>(currentSubset));

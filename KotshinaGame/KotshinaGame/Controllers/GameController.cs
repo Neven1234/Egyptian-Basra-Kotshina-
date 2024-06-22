@@ -1,6 +1,5 @@
 ﻿using Kotshina.Data;
 using Kotshina.Models;
-using KotshinaGame.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +11,11 @@ namespace KotshinaGame.Controllers
     {
         private readonly IGameLogic _gameLogic;
         private readonly GameState _gameState;
-        private readonly HubService _gamePlayHub;
 
-        public  GameController(IGameLogic gameLogic,GameState gameState,HubService gamePlayHub)
+        public  GameController(IGameLogic gameLogic,GameState gameState)
        {
            _gameLogic = gameLogic;
            _gameState = gameState;
-           _gamePlayHub = gamePlayHub;
         }
         [HttpGet("new-game")]
         public async Task<IActionResult> StartGame()
@@ -94,7 +91,6 @@ namespace KotshinaGame.Controllers
                 _gameState.Computer.Score += score;
                 _gameState.IsPlayerTurn = true;
                 CheckToReFeal(_gameState);
-                //await _gamePlayHub.UpdateGameState(_gameState);
                 return Ok(new
                 {
                     cardPlayed=cardToPlay,

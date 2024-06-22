@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA79w9ISVGe0KdxdvKIwKK6wAAAAACAAAAAAAQZgAAAAEAACAAAACMVAoxgApz7oPM2EtcwdQezVSuYmwCNBD12nIYPbx6bwAAAAAOgAAAAAIAACAAAABcz98jhCdr1eLgiPdCovL1NsVYXmu6DWGb5ysls1inVSAAAAA9ssnffxUlRe7i6M+cPMbDC/cV3Gz1DZ2gcIvOfgzkfEAAAADChtk1F0m7q40sI78h1lCl9PiQ/qA56KB26xpcbe/NLRwkm09afCxv8qpOwo5ClxkkW8FLUI1Wq9Epav4UcYUt</EncryptedPassword>
+    <_PublishTargetUrl>ftp://BasraCat.somee.com/www.BasraCat.somee.com</_PublishTargetUrl>
+    <History>True|2024-06-21T23:40:40.4113783Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/23/2024 00:35:15</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/23/2024 00:35:15</publishTime>
+    </File>
+    <File Include="KotshinaGame.deps.json">
+      <publishTime>06/22/2024 02:39:09</publishTime>
+    </File>
+    <File Include="KotshinaGame.dll">
+      <publishTime>06/22/2024 02:39:08</publishTime>
+    </File>
+    <File Include="KotshinaGame.exe">
+      <publishTime>06/22/2024 02:39:08</publishTime>
+    </File>
+    <File Include="KotshinaGame.pdb">
+      <publishTime>06/22/2024 02:39:08</publishTime>
+    </File>
+    <File Include="KotshinaGame.runtimeconfig.json">
+      <publishTime>06/22/2024 02:39:09</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 22:14:12</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>03/24/2018 19:44:14</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>07/19/2022 17:21:22</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>07/19/2022 17:21:38</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>07/19/2022 17:21:48</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>06/22/2024 02:39:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

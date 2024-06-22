@@ -1,30 +1,50 @@
+<div *ngIf="!gameStarted">
+  <app-start-game (startGameEvent)="startNewGame()"></app-start-game>
+</div>
 
-  <app-cat></app-cat>
-  <div class="Computer-hand">
-    <div class="ComputerCard" *ngFor="let card of gameState?.computer.hand; let i = index" [ngStyle]="getCardStyle(i)" >
-        <div class="card-back"></div>
+<div *ngIf="loading && gameStarted " class="loader">
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<div *ngIf="!loading" >
+  <div *ngIf="gameStarted">
+    <app-cat [CatTurn]="CatTurn" [CatLost]="CatLost" [CatWin]="CatWin" [NewGame]="newGame"  ></app-cat>
+    <div class="Computer-hand">
+      <div class="ComputerCard" *ngFor="let card of gameState?.computer.hand; let i = index" [ngStyle]="getCardStyle(i)" >
+          <div class="card-back"></div>
+      </div>
+  </div>
+  
+  <div class="Table-hand">
+      <div class="TableCard" *ngFor="let card of gameState?.tableCards; let i = index"  >
+          <div *ngIf="card.value!='1'"> {{ card.value }}{{ card.suits }}</div>
+          <div *ngIf="card.value=='1'">  A {{ card.suits }}</div>
+      </div>
+  </div>
+  <div class="player-hand">
+    <div class="player-card" *ngFor="let card of gameState?.player.hand; let i = index" [ngStyle]="getCardStyle(i)" (click) ="onCardClick(card)" >
+     <div *ngIf="card.value!='1'"> {{ card.value }}{{ card.suits }}</div>
+     <div *ngIf="card.value=='1'">  A {{ card.suits }}</div>
     </div>
-</div>
-
-<div class="Table-hand">
-    <div class="TableCard" *ngFor="let card of gameState?.tableCards; let i = index"  >
-        <div *ngIf="card.value!='1'"> {{ card.value }}{{ card.suits }}</div>
-        <div *ngIf="card.value=='1'">  A {{ card.suits }}</div>
+  </div>
+  
+  <div class="Deck">
+    <div class="Deck-card" *ngFor="let card of gameState?.deck.cards; let i = index" [ngStyle]="getDeckCardStyle(i)" >
+      <div class="card-back"></div>
     </div>
-</div>
-<div class="player-hand">
-  <div class="player-card" *ngFor="let card of gameState?.player.hand; let i = index" [ngStyle]="getCardStyle(i)" (click) ="onCardClick(card)" >
-   <div *ngIf="card.value!='1'"> {{ card.value }}{{ card.suits }}</div>
-   <div *ngIf="card.value=='1'">  A {{ card.suits }}</div>
+  </div>
+    <div class="score-board">
+      <div class="player-score">Player Score: {{this.gameState?.player.score}} </div>
+      <div class="computer-score">Computer Score: {{this.gameState?.computer.score}}</div>
+    </div>
+  </div>
+  <div *ngIf="gameFinished">
+    <div class="modal-overlay show">
+      <app-repeat (startGameEvent)="startNewGame()" [GameWinner]="GameWinnerCheck" (startNewGame)="onGameRestart()"></app-repeat>
+    </div>
   </div>
 </div>
-
-<div class="Deck">
-  <div class="Deck-card" *ngFor="let card of gameState?.deck.cards; let i = index" [ngStyle]="getDeckCardStyle(i)" >
-    <div class="card-back"></div>
-  </div>
-</div>
-  <div class="score-board">
-    <div class="player-score">Player Score: {{this.gameState?.player.score}} </div>
-    <div class="computer-score">Computer Score: {{this.gameState?.computer.score}}</div>
-  </div>

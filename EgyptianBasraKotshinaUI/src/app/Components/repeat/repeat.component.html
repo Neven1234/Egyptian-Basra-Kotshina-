@@ -1,0 +1,18 @@
+<div class="modal-overlay">
+        <div class="modal-content">
+            <div *ngIf="GameWinner!=undefined">
+                <div *ngIf="GameWinner== 0">
+                    <h2>Cat wins hehe</h2>
+                </div>
+                <div *ngIf="GameWinner== 1">
+                    <h2>You Destroyed our cat   <p> <span> 😟 </span> </p></h2>
+                </div>
+                <div *ngIf="GameWinner== -1">
+                    <h2>Drwo</h2>
+                </div>
+            </div>
+            
+            <h2>Play Again</h2>
+            <button (click)="startGame()">Start New Game</button>
+        </div>
+</div>

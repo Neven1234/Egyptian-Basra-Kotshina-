@@ -1,0 +1,89 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\CardBack.jpg",
+      "PackagePath": "staticwebassets\\assets\\CardBack.jpg"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\cats_playing_cards_by_katarzyna_kalder_king.jpg",
+      "PackagePath": "staticwebassets\\assets\\cats_playing_cards_by_katarzyna_kalder_king.jpg"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\scene.bin",
+      "PackagePath": "staticwebassets\\assets\\scene.bin"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\scene.gltf",
+      "PackagePath": "staticwebassets\\assets\\scene.gltf"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\textures\\Body_baseColor.png",
+      "PackagePath": "staticwebassets\\assets\\textures\\Body_baseColor.png"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\textures\\Ears_Cat_baseColor.png",
+      "PackagePath": "staticwebassets\\assets\\textures\\Ears_Cat_baseColor.png"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\textures\\Eyebrows_baseColor.png",
+      "PackagePath": "staticwebassets\\assets\\textures\\Eyebrows_baseColor.png"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\textures\\EyelidsTail_Cat_baseColor.png",
+      "PackagePath": "staticwebassets\\assets\\textures\\EyelidsTail_Cat_baseColor.png"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\assets\\textures\\Eyes_baseColor.png",
+      "PackagePath": "staticwebassets\\assets\\textures\\Eyes_baseColor.png"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\main-AAG7NJVO.js",
+      "PackagePath": "staticwebassets\\main-AAG7NJVO.js"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\media\\CardBack-PVYQ55X7.jpg",
+      "PackagePath": "staticwebassets\\media\\CardBack-PVYQ55X7.jpg"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\media\\cats_playing_cards_by_katarzyna_kalder_king-VY3A6AL4.jpg",
+      "PackagePath": "staticwebassets\\media\\cats_playing_cards_by_katarzyna_kalder_king-VY3A6AL4.jpg"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\polyfills-6EAL64PA.js",
+      "PackagePath": "staticwebassets\\polyfills-6EAL64PA.js"
+    },
+    {
+      "Id": "D:\\Kotshina\\Egyptian-Basra-Kotshina-\\KotshinaGame\\KotshinaGame\\wwwroot\\styles-5INURTSO.css",
+      "PackagePath": "staticwebassets\\styles-5INURTSO.css"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.KotshinaGame.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.KotshinaGame.props",
+      "PackagePath": "build\\KotshinaGame.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.KotshinaGame.props",
+      "PackagePath": "buildMultiTargeting\\KotshinaGame.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.KotshinaGame.props",
+      "PackagePath": "buildTransitive\\KotshinaGame.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

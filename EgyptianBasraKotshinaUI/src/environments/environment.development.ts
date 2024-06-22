@@ -1,4 +1,4 @@
 export const environment = {
     production:false,
-    baseUrl:'https://localhost:7153/'
+    baseUrl:'http://BasraCat.somee.com/'
 };

@@ -1,144 +1,311 @@
+/* Basic styles for the home component */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2b2b2b;
-    color: #fff;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #2b2b2b;
+  color: #fff;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.loader {
+  --dim: 3rem;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--dim);
+  height: var(--dim);
+  position: fixed; /* Fixed position to center it */
+  top: 50%; /* Move it down by 50% of the viewport height */
+  left: 50%; /* Move it horizontally by 50% of the viewport width */
+  transform: translate(-50%, -50%); /* Center it perfectly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+  animation: spin988 2s linear infinite;
+}
+
+.loader .circle {
+  --color: #333;
+  --dim: 1.2rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.loader .circle:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin988 {
+  0% {
+    transform: scale(1) rotate(0);
   }
+
+  20%, 25% {
+    transform: scale(1.3) rotate(90deg);
+  }
+
+  45%, 50% {
+    transform: scale(1) rotate(180deg);
+  }
+
+  70%, 75% {
+    transform: scale(1.3) rotate(270deg);
+  }
+
+  95%, 100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
 .score-board {
   position: absolute;
-  top: 200px;
+  top: 20px;
   left: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 80px;
 }
-.player-score  {
-    font-size: 20px;
-    background-color: #32bf23;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .computer-score{
-    font-size: 20px;
-    background-color: #da2d2d;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+.player-score,
+.computer-score {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px; 
+}
+
+.player-score {
+  outline-color: #32bf23;
+}
+
+.computer-score {
+  outline-color: #da2d2d;
+}
+
+/* Table cards */
+.Table-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  gap: 8px;
+  margin-top: 50px;
+  max-width: 90%; /* Optional: Limit the width to avoid overflowing the screen */
+}
+
+.TableCard {
+  width: 70px;
+  height: 85px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px; /* Optional: Add bottom margin for better spacing when wrapping */
+}
+
+/* Player cards */
+.player-hand {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.player-card {
+  width: 70px;
+  height: 94px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  transform-origin: bottom center;
+  cursor: pointer;
+}
+
+.player-card:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Computer cards */
+.Computer-hand {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ComputerCard {
+  width: 90px;
+  height: 122px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #006;
+  background-image: url('../../../assets/CardBack.jpg');
+  background-size: cover;
+}
+
+/* Deck cards */
+.Deck {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 84px;
+  margin-right: 50;
+}
+
+.Deck-card {
+  position: absolute;
+  width: 70px;
+  height: 94px;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensure the canvas is behind other elements */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .player-card, .ComputerCard, .Deck-card, .TableCard {
+    width: 60px;
+    height: 84px;
+    font-size: 14px;
   }
 
-  /* table cards */
-  .Table-hand {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 10px;
+  .score-board {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    width: 90px;
   }
-  
-  .TableCard {
+}
+
+@media (max-width: 768px) {
+  .player-card, .ComputerCard, .TableCard {
     width: 50px;
     height: 70px;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
+    font-size: 12px;
   }
 
-  
-  /* player cards */
-  .player-hand {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+  .Deck-card{
+    width: 40px;
+    height: 50px;
   }
-  
-  .player-card {
-    width: 100px;
-    height: 130px;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    transform-origin: bottom center;
-    cursor: pointer;
-  }
-  
-  .player-card:hover {
-    transform: translateY(-20px) scale(1.2);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
 
-/* computer cards */
+  .score-board {
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    width: 80px;
+  }
+
+  .Table-hand {
+    top: 55%;
+  }
+
   .Computer-hand {
-    display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+    top: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card, .ComputerCard, .TableCard {
+    width: 40px;
+    height: 56px;
+    font-size: 10px;
   }
   
-  .ComputerCard {
-    width: 100px;
-    height: 130px;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background-color: #006;
-    background-image: url('../../../assets/CardBack.jpg'); /* Add your background image here */
-    background-size: cover;
+  .Deck-card{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 60%;
   }
 
-  /* deck cards */
-  .Deck {
-    position: absolute;
-    right: 20px; /* Distance from the right edge of the screen */
-    top: 50%; /* Adjust as needed */
-    transform: translateY(-50%); /* Center the deck vertically */
-    width: 100px;  /* Adjust width as per card size */
-    height: 130px; /* Adjust height as per card size */
+  .Deck{
+    width: 30px;
+    height: 40px;
   }
-  
-  .Deck-card {
-    position: absolute;
-    width: 100px;
-    height: 130px;
-    border-radius: 10px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  .score-board {
+    top: 5px;
+    left: 5px;
+    font-size: 10px;
+    width: 70px;
   }
+
+  .Table-hand {
+    top: 60%;
+  }
+
+  .Computer-hand {
+    top: 20%;
+  }
+}

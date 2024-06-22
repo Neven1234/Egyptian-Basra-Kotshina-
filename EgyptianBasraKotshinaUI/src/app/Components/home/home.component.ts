@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { GameState } from '../../Models/gameState';
 import { BasraService } from '../../_services/basra.service';
 import { Card } from '../../Models/cars';
@@ -10,15 +10,32 @@ import { CatComponent } from '../cat/cat.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  loading:boolean=true;
   gameState:GameState;
+  gameStarted: boolean = false;
+  gameFinished:boolean=false;
+  CatTurn:boolean=false
+  CatWin:boolean=false
+  CatLost:boolean=false
+  Draw:boolean=false
+  newGame:boolean=false
+  GameWinnerCheck:number
   constructor(private gamseServices:BasraService){}
   ngOnInit(): void {
-    this.startNewGame()
+  
   }
 
+
   startNewGame(){
+    this.gameFinished=false
+    this.gameStarted = true;
+    this.CatLost=false;
+    this.CatWin=false;
+    this.CatTurn=false;
+    console.log('new game repeat?'+ this.newGame)
     this.gamseServices.startGame().subscribe({
       next:(response)=>{
+        this.loading=false
         this.gameState=response
       },
       error:(error)=>{
@@ -44,6 +61,8 @@ export class HomeComponent implements OnInit {
 
   onCardClick(card: Card): void {
     if(this.gameState.isPlayerTurn){
+      this.gameState.isPlayerTurn=false
+      this.CatTurn=false
       this.gameState.tableCards.push(card)
       var playerCard = this.gameState.player.hand.findIndex(c => c.value === card.value && c.suits === card.suits);
     if (playerCard !== -1) {
@@ -54,21 +73,22 @@ export class HomeComponent implements OnInit {
           setTimeout(() => {
             this.gameState=response.gameState
           }, 1000);
+          this.CatTurn=true
            setTimeout(() => {
             this.gamseServices.CatTurn().subscribe({
               next:(response)=>{
-                const copCardIndex = this.gameState.computer.hand.findIndex(c => c.value === response.cardPlayed.value && c.suits === response.cardPlayed.suits);
-                console.log('index: ' + copCardIndex);
-
-                // Check if the card exists in the computer's hand
+                const copCardIndex = this.gameState.computer.hand.findIndex(c => c.value === response.cardPlayed.value && c.suits === response.cardPlayed.suits);           
                 if (copCardIndex !== -1) {
-                  // Remove the card from the computer's hand array
                   this.gameState.computer.hand.splice(copCardIndex, 1);
                 }
-                this.gameState.tableCards.push(response.cardPlayed)
-               
+                this.gameState.tableCards.push(response.cardPlayed)              
                 setTimeout(() => {
                   this.gameState=response.gameState
+                  if(this.gameState?.deck.cards.length==0 && this.gameState?.player.hand.length==0
+                    && this.gameState?.computer.hand.length==0 && this.gameState?.tableCards.length==0){
+                      console.log('game finished')
+                      this.GameWinner()
+                  }
                 }, 1000);
               }
             })
@@ -80,5 +100,29 @@ export class HomeComponent implements OnInit {
     
   }
 
+  GameWinner(){
+    
+    this.gamseServices.CheckWiner().subscribe({
+      next:(response)=>{
+        if(response==0){
+          this.GameWinnerCheck=0
+          this.CatWin=true
+        }
+        else if(response==1){
+          this.GameWinnerCheck=1
+          this.CatLost=true
+        }
+        else{
+          this.GameWinnerCheck=1
+          this.Draw=true
+        }
+      }
+    })
+    this.gameFinished=true
+    console.log(this.gameFinished)
+  }
 
+  onGameRestart(): void {
+    this.newGame = true; 
+  }
 }
